@@ -1,0 +1,56 @@
+.empty-questions {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 0 auto;
+
+  .room-title {
+    margin: 32px 0 24px;
+    display: flex;
+    align-items: center;
+  }
+
+  div.empty {
+    margin-top: 130px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    strong {
+      margin-top: 16px;
+      color: #29292E;
+      font-family: 'Poppins', sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 27px;
+      text-align: center;
+    }
+
+    p {
+      font-family: 'Roboto', sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 21px;
+      text-align: center;
+      color: #737380;
+    }
+  }
+
+  > button {
+    margin-top: 16px;
+    height: 40px;
+    width: 80px;
+    background: transparent;
+    color: #835AFD;
+    font-weight: normal;
+    border: 1px solid #835AFD;
+    box-sizing: border-box;
+    border-radius: 8px;
+
+    align-self: center;
+  }
+
+}

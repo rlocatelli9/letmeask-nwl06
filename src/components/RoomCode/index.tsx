@@ -16,10 +16,10 @@ const RoomCode: React.FC<RoomCodeProps> = ({code}: RoomCodeProps) => {
 
   return (
     <div className="room-code" onClick={copyRoomCodeToClipBoard}>
-      <div>
+      <div title="Copiar código">
         <img src={copyImg} alt="Copiar código da sala" />
       </div>
-      <span>Sala #{code}</span>
+      <span title="Código da sala">{code}</span>
     </div>
   );
 }

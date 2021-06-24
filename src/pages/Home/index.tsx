@@ -39,6 +39,10 @@ const Home: React.FC = () => {
       return;
     }
 
+    if(roomRef.val().closedAt) {
+      alert('A sala foi encerrada!')
+      return;
+    }
 
     history.push(`/rooms/${roomCode}`)
   }, [history, roomCode])
