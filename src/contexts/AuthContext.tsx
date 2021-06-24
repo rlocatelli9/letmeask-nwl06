@@ -12,6 +12,7 @@ interface User {
 export interface AuthContextProps {
   user: User | undefined;
   signIn: () => Promise<void>;
+  signOut: () => Promise<void>;
 }
 
 export const AuthContext = createContext<AuthContextProps>({} as AuthContextProps);
@@ -63,15 +64,15 @@ export const AuthProvider: React.FC = ({ children }) => {
 
   }, []);
 
-  // const signOut = useCallback(() => {
-  //   localStorage.removeItem('@Letmeask:user');
+  const signOut = useCallback(async () => {
+    await auth.signOut();
 
-  //   setUser({} as User);
-  // }, []);
+    setUser(undefined);
+  }, []);
 
   return (
     <AuthContext.Provider
-      value={{user, signIn}}
+      value={{user, signIn, signOut}}
     >
       {children}
     </AuthContext.Provider>
