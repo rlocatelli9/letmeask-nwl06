@@ -1,12 +1,22 @@
+$bg-dark-mode: #191622;
+$currentLine-dark-mode: #44475a;
+$foreground: #E1E1E6;
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: background 0.7s;
 }
 
 body {
   background: #f8f8f8;
   color: #29292e;
+
+  &.dark-mode {
+    background-color: $bg-dark-mode;
+    color: $foreground;
+  }
 }
 
 body, input, button, textarea {

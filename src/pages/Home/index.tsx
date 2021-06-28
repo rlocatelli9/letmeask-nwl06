@@ -6,15 +6,18 @@ import {
 import {useAuth} from '../../hooks/useAuth'
 import illustrantionImg from '../../assets/illustration.svg'
 import logoImg from '../../assets/logo.svg'
+import logoDarkImg from '../../assets/logo-dark.svg'
 import googleIconImg from '../../assets/google-icon.svg'
 
 import './styles.scss'
 import Button from '../../components/Button';
 import { database } from '../../services/firebase';
+import useTheme from '../../hooks/useTheme';
 
 const Home: React.FC = () => {
   const history = useHistory();
   const {signIn, user} = useAuth();
+  const {current} = useTheme();
   const [roomCode, setRoomCode] = useState('');
 
   const handleCreateRoom = useCallback(async () => {
@@ -60,7 +63,7 @@ const Home: React.FC = () => {
       </aside>
       <main>
         <div className="main-content">
-          <img src={logoImg} alt="Letmeask" />
+          <img src={current === 'dark' ? logoImg : logoDarkImg} alt="Letmeask" />
           <button className="create-room-btn" onClick={handleCreateRoom}>
             <img src={googleIconImg} alt="Logo do google" />
             Crie sua sala com o Google
