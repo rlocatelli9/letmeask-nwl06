@@ -11,6 +11,7 @@ import { database } from '../../services/firebase';
 import Question from '../../components/Question';
 import { useRoom } from '../../hooks/useRoom';
 import EmptyPage from '../../components/EmptyPage';
+import Header from '../../components/Header';
 
 interface RoomParams {
   id: string;
@@ -65,12 +66,7 @@ const Room: React.FC = () => {
 
   return (
     <div id="page-room">
-      <header>
-        <div className="content">
-          <img src={logoImg} alt="Letmeask" />
-          <div><RoomCode code={`${id}`} /></div>
-        </div>
-      </header>
+      <Header roomId={id}/>
 
       <main>
         <div className="room-title">
